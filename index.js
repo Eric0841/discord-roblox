@@ -94,9 +94,6 @@ bot.on("message", message => {
 }
 
 if (command === "유저") {
-
-
-
     var rbxbot = require(`noblox.js`)
     var config = require(`./config.json`)
 
