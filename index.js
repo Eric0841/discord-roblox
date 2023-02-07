@@ -64,7 +64,7 @@ bot.on("message", message => {
     }
     }
 
-    if (command === "급진급") {
+    if (command === "진급") {
         const member = message.author;
         const name = message.author.username;
         const url = member.displayAvatarURL();
