@@ -110,14 +110,14 @@ if (command === "유저") {
                 .then(async (robloxid) => {
                     rbxbot.getRankNameInGroup(config.GroupID, robloxid)
                         .then((rankname) => {
-			    const embed = new Discord.MessageEmbed()
-                   	    .setColor(`${color}`)
-                            .setThumbnail(`https://www.roblox.com/bust-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
-                            .setTitle("**유저 팀 정보**") //Roblox 그룹 진급
-                            .setDescription(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
-                            .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
-                            message.channel.send(embed);
-                            //message.reply(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
+			    //const embed = new Discord.MessageEmbed()
+                   	   // .setColor(`${color}`)
+                           // .setThumbnail(`https://www.roblox.com/bust-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
+                           // .setTitle("**유저 팀 정보**") //Roblox 그룹 진급
+                           // .setDescription(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
+                           // .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
+                           // message.channel.send(embed);
+                            message.reply(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
                         })
                         .catch((err) => {
                             console.log(err)
