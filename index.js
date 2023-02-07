@@ -17,7 +17,7 @@ var groupId = 12475608 // Your group id
 // To change the permissions go to line 30, 56, 99 ,127, 155, 176
 
 // Logining in..
-nblx.setCookie((process.env.roblox) // Logs into the acc
+nblx.setCookie(process.env.roblox) // Logs into the acc
 bot.on('ready', () => {
 	console.log(`Nobloxjs bot is ready! and logged in as ${bot.user.tag}`); // Make bot online..
 });
