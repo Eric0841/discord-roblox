@@ -255,6 +255,5 @@ if (command === "담벼락") {
 
 
 
-
 // Starts the bot
 bot.login(process.env.token);
