@@ -29,7 +29,7 @@ bot.on('ready', () => {
 bot.on("message", message => {
     const args = message.content.slice(prefix.length).trim().split(' ');
     const command = args.shift().toLowerCase();
-    if (command ===  "허가") {
+    if (command ===  "가입수락") {
         const member = message.author;
         const name = message.author.username;
         const url = member.displayAvatarURL();
@@ -49,7 +49,7 @@ bot.on("message", message => {
 
                     .setDescription(`성공적으로 그룹 가입 신청 수락을 완료 하였습니다.\n그룹에서 **${args}**가 그룹가입 신청 허가됨!\n유저아이디 : ${id}\n정상적으로 처리 되었는지 다시 한번 확인 부탁드립니다`)
 
-                    .setFooter('Roblox Group Rank Bot') //.setFooter(`${name}`,`${url}`)
+                    .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
                     message.channel.send(embed);
                     nblx.handleJoinRequest(groupId, id, true)
                     .catch((error)=>{
@@ -64,7 +64,7 @@ bot.on("message", message => {
     }
     }
 
-    if (command === "진급") {
+    if (command === ") {
         const member = message.author;
         const name = message.author.username;
         const url = member.displayAvatarURL();
@@ -83,7 +83,7 @@ bot.on("message", message => {
                     .setThumbnail(`https://www.roblox.com/bust-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
                     .setTitle("**계급 변경 완료**") //Roblox 그룹 진급
                     .setDescription(`성공적으로 계급을 변경했습니다.\n그룹에서 **${args}**가 진급되었습니다!\n유저아이디 : ${id}\n정상적으로 처리 되었는지 다시 한번 확인 부탁드립니다`)
-                    .setFooter('Roblox Group Rank Bot') //.setFooter(`${name}`,`${url}`)
+                    .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
                     message.channel.send(embed);
                 }
         });
@@ -110,7 +110,14 @@ if (command === "유저") {
                 .then(async (robloxid) => {
                     rbxbot.getRankNameInGroup(config.GroupID, robloxid)
                         .then((rankname) => {
-                            message.reply(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
+			    const embed = new Discord.MessageEmbed()
+                   	    .setColor(`${color}`)
+                            .setThumbnail(`https://www.roblox.com/bust-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
+                            .setTitle("**유저 팀 정보**") //Roblox 그룹 진급
+                            .setDescription(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
+                            .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
+                            message.channel.send(embed);
+                            //message.reply(`${robloxname}님은 ${rankname}에 위치해 있습니다.`)
                         })
                         .catch((err) => {
                             console.log(err)
@@ -130,8 +137,8 @@ if (command === "명령어") {
         .setColor(`${color}`)
         .setThumbnail(`${bot.user.displayAvatarURL()}`)
         .setTitle(`${bot.user.username} Commands`)
-        .setDescription(`${prefix}명령어 -- 명령 목록 표시\n${prefix}허가 [player_name] -- 그룹의 플레이어 가입요청 허가\n${prefix}진급 [player_name]  -- 해당 플레이어를 1등급 진급\n${prefix}강등 [player_name] -- 해당 플레이어를 1등급 강등\n${prefix}공지 [msg] -- 그룹 담벼락에 메시지를 공지합니다 (미완성)..\n${prefix}담벼락 [msg] -- 담벼락에 메시지를 게시합니다 (미완성)..\n${prefix }킥 [player_Name] -- 그룹에서 플레이어를 추방합니다.`)
-        .setFooter('제작: 에릭#0841 (소유권은 에릭#0841에게 있습니다)') //.setFooter(`${name}`,`${url}`)
+        .setDescription(`${prefix}명령어 -- 명령 목록 표시\n${prefix}가입수락 [player_name] -- 그룹의 플레이어 가입요청 허가\n${prefix}승급 [player_name]  -- 해당 플레이어를 1등급 진급\n${prefix}강등 [player_name] -- 해당 플레이어를 1등급 강등\n${prefix}공지 [msg] -- 그룹 담벼락에 메시지를 공지합니다 (미완성)..\n${prefix}담벼락 [msg] -- 담벼락에 메시지를 게시합니다 (미완성)..\n${prefix }킥 [player_Name] -- 그룹에서 플레이어를 추방합니다.`)
+        .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
         message.channel.send(embed);
 }
 
@@ -157,7 +164,7 @@ if (command === "강등") {
 
                 .setDescription(`성공적으로 계급을 변경했습니다.\n그룹에서 **${args}**가 강등되었습니다!\n유저아이디 : ${id}\n정상적으로 처리 되었는지 다시 한번 확인 부탁드립니다`)
 
-                .setFooter('Roblox Group Rank Bot') //.setFooter(`${name}`,`${url}`)
+                .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
                 message.channel.send(embed);
             }
     });
@@ -188,7 +195,7 @@ if (command === "킥") {
 
                 .setDescription(`성공적으로 추방을 완료하였습니다.\n그룹에서 **${args}**가 추방되었습니다!\n유저아이디 : ${id}\n정상적으로 처리 되었는지 다시 한번 확인 부탁드립니다`)
 
-                .setFooter('Roblox Group Rank Bot') //.setFooter(`${name}`,`${url}`)
+                .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
                 message.channel.send(embed);
             }
     });
@@ -212,7 +219,7 @@ if (command === "공지") {
                 
                 .setDescription(`성공적으로 공지하였습니다.\n그룹에 **${args}**가 공지되었습니다!`)
 
-                .setFooter('Roblox Group Rank Bot') //.setFooter(`${name}`,`${url}`)
+                .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
                 message.channel.send(embed);
                 nblx.shout({ group: groupId, message: `${args}` })
                 .catch((error)=>{
@@ -239,7 +246,7 @@ if (command === "담벼락") {
 
                 .setDescription(`성공적으로 게시하였습니다.\n그룹에 **${args}**가 게시되었습니다!`)
                 
-                .setFooter('Roblox Group Rank Bot') //.setFooter(`${name}`,`${url}`)
+                .setFooter('Make By RCAT') //.setFooter(`${name}`,`${url}`)
                 message.channel.send(embed);
                 nbx.post(groupId, `${args}`)
                 .catch((error)=>{
