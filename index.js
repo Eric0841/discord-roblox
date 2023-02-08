@@ -77,7 +77,7 @@ bot.on("message", message => {
                 if(!id){
                     message.channel.send(":x: 그룹에서 해당 사용자를 찾을 수 없습니다!!");
                 } else {
-                    nblx.changeRank(groupId, id, 1)
+                   nblx.changeRank(groupId, id, 1)
                     const embed = new Discord.MessageEmbed()
                     .setColor(`${color}`)
                     .setThumbnail(`https://www.roblox.com/bust-thumbnail/image?userId=${id}&width=420&height=420&format=png`)
